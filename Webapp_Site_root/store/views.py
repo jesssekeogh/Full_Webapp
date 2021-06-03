@@ -7,7 +7,7 @@ def categories(request):
     }
 
 def all_products(request):
-    products = Product.objects.all()
+    products = Product.products.all()
     return render(request, 'store/store.html', {'products': products})
 
 def product_detail(request, slug):
