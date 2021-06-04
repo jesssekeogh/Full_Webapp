@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'store_basket.apps.StoreBasketConfig',
     'store.apps.StoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'store.views.categories',
+                'store_basket.context_processors.basket',
             ],
         },
     },
