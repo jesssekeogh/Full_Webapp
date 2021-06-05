@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'store_basket.apps.StoreBasketConfig',
     'store.apps.StoreConfig',
     'django.contrib.admin',
@@ -124,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -132,3 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTH_USER_MODEL = 'account.UserBase'
+LOGIN_REDIRECT_URL = '/account/dashboard'
+LOGIN_URL = '/account/login'
